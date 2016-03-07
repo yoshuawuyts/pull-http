@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "body": "^5.1.0",
-    "pump": "^1.0.1",
+    "pumpify": "^1.3.4",
     "send-data": "^8.0.0",
     "size-stream": "^1.0.1"
   },

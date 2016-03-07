@@ -2,7 +2,7 @@ const sendError = require('send-data/error')
 const sendJson = require('send-data/json')
 const sizeStream = require('size-stream')
 const parseJson = require('body/json')
-const pump = require('pump')
+const pumpify = require('pumpify')
 
 const jsonType = 'application/json'
 
@@ -59,7 +59,7 @@ exports.intercept = function through (httpFn) {
           if (end) return cb(end)
           const getSize = sizeStream()
           getSize.once('size', setSize)
-          const sink = pump(getSize, res)
+          const sink = pumpify(getSize, res)
           httpFn(req, res).pipe(sink)
           cb(null, null)
         })
