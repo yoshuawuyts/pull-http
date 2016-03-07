@@ -1,0 +1,35 @@
+{
+  "name": "pull-http",
+  "version": "1.0.0",
+  "description": "Http pull-stream functions",
+  "main": "index.js",
+  "scripts": {
+    "deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "test": "standard && npm run deps && NODE_ENV=test node test",
+    "test:cov": "standard && npm run deps && NODE_ENV=test istanbul cover test.js"
+  },
+  "repository": "yoshuawuyts/pull-http",
+  "keywords": [
+    "http",
+    "pull-stream",
+    "stream",
+    "node",
+    "vanilla",
+    "http-framework",
+    "minimal",
+    "custom"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "body": "^5.1.0",
+    "pump": "^1.0.1",
+    "send-data": "^8.0.0",
+    "size-stream": "^1.0.1"
+  },
+  "devDependencies": {
+    "dependency-check": "^2.5.1",
+    "istanbul": "^0.4.2",
+    "standard": "^6.0.7",
+    "tape": "^4.5.0"
+  }
+}
