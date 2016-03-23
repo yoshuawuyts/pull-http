@@ -36,7 +36,7 @@ exports.createSink = function createSink (req, res) {
   return function (read) {
     read(null, function next (end, data) {
       if (end === true) return
-      else if (end) return sendError(req, res, end)
+      else if (end) return sendError(req, res, { body: end })
       else if (data) {
         sendJson(req, res, data)
         read(null, next)
